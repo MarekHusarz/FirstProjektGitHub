@@ -15,7 +15,7 @@
     } %>
 	nie ma tego 
     <meta charset="utf-8"/>
-    <title>Marek Husarz vers1</title>
+    <title>Marek Husarz</title>
     <meta name="description" content="Strona www"/>
     <meta name="keywords" content="example, przyklad/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
