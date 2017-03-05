@@ -1,0 +1,196 @@
+body {
+    background-image: url("/img/background1.png");
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin: 0 !important;
+}
+
+#wrapper {
+    width: 100%;
+}
+
+#header {
+    width: 901px;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: solid 1px;
+    border-color: chartreuse;
+}
+
+#logodiv {
+    width: 901px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo {
+    width: 300px;
+    font-size: 48px;
+    text-align: center;
+    float: left;
+}
+
+#zegar {
+    width: 300px;
+    font-size: 48px;
+    text-align: center;
+    float: left;
+}
+
+#logout {
+    width: 300px;
+    text-align: center;
+    float: left;
+}
+
+input[type=submit] {
+    width: 200px;
+    background-color: chartreuse;
+    color: #000000;
+    border: none;
+    borde-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    width: 195px;
+    background-color: #63c300;
+    color: #000000;
+    font-size: 19px;
+}
+
+input[type=submit]:active {
+    width: 190px;
+    background-color: #c30006;
+    color: #000000;
+    font-size: 18px;
+}
+
+input[type=submit]:hover {
+    width: 195px;
+    background-color: #63c300;
+    color: #000000;
+    font-size: 19px;
+}
+
+#naw {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+#image {
+    width: 450px;
+    font-size: 48px;
+    text-align: center;
+}
+
+#menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 18px;
+    height: 35px;
+    line-height: 200%;
+    display: inline-block;
+
+}
+
+#menu li {
+    width: 150px;
+    float: left;
+    color: white;
+    background-color: black;
+
+}
+
+#menu li > a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu li:hover {
+    color: white;
+    background-color: #232323;
+}
+
+#menu > li > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    color: white;
+    background-color: black;
+}
+
+#menu li > ul > li {
+    width: 150px;
+    clear: both;
+    z-index: 1;
+    position: relative;
+}
+
+#menu li > ul > li:last-child {
+    border-radius: 0px 0px 15px 15px;
+}
+
+#menu > li > ul {
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+    transition: 250ms;
+}
+
+/* wygląd elementów - ul - po najechaniu kursorem myszki na element - li */
+#menu > li:hover ul {
+    visibility: visible;
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+}
+
+#slider {
+    width: 901px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.bjqs-controls.v-centered li a {
+    display: block;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+}
+
+ul.bjqs-controls.v-centered li a:hover {
+    background: #000;
+    color: #fff;
+}
+
+ol.bjqs-markers li a {
+    padding: 5px 10px;
+    background: #000;
+    color: #fff;
+    margin: 5px;
+    text-decoration: none;
+}
+
+ol.bjqs-markers li.active-marker a,
+ol.bjqs-markers li a:hover {
+    background: #999;
+}
+
+p.bjqs-caption {
+    background: rgba(255, 255, 255, 0.5);
+}
