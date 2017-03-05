@@ -10,8 +10,6 @@
 <html lang="pl">
 <head>
 
-654315
-
     <% if (session.getAttribute("currentSessionUser") == null) {
         response.sendRedirect("LogIn.jsp");
     } %>
