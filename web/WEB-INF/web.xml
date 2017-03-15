@@ -3,4 +3,41 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <welcome-file-list>
+        <welcome-file>LogIn.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>ServletLogowanie</servlet-name>
+        <servlet-class>classes.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletLogowanie</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletWylogowanie</servlet-name>
+        <servlet-class>classes.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletWylogowanie</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletRejestracja</servlet-name>
+        <servlet-class>classes.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletRejestracja</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletValidacja</servlet-name>
+        <servlet-class>classes.InValidate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletValidacja</servlet-name>
+        <url-pattern>/validate</url-pattern>
+    </servlet-mapping>
 </web-app>
+
+
