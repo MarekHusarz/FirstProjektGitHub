@@ -11,7 +11,7 @@
 <head>
 
     <% if (session.getAttribute("currentSessionUser") == null) {
-        response.sendRedirect("LogIn.jsp");
+        response.sendRedirect("logIn.jsp");
     } %>
 	nie ma tego 
     <meta charset="utf-8"/>

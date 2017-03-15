@@ -28,10 +28,10 @@ public class LoginServlet extends HttpServlet {
 
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser", user);
-                response.sendRedirect("Index.jsp"); //logged-in page
+                response.sendRedirect("index.jsp"); //logged-in page
             } else
                 System.out.println("not valid");
-                response.sendRedirect("LogIn.jsp");
+                response.sendRedirect("logIn.jsp");
 
         } catch (Throwable theException) {
             System.out.println(theException);

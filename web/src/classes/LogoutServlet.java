@@ -22,7 +22,7 @@ public class LogoutServlet extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             session.invalidate();
-            response.sendRedirect("LogIn.jsp"); //logged-in page
+            response.sendRedirect("logIn.jsp"); //logged-in page
 
             System.out.println("You are successfully logged out!");
         } catch (Throwable theException) {

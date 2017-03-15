@@ -21,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
             if (user.isValid()) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser", user);
-                response.sendRedirect("LogIn.jsp"); //logged-in page
+                response.sendRedirect("logIn.jsp"); //logged-in page
             } else
                 System.out.println("user nie jest valid");
         } catch (Throwable theException) {

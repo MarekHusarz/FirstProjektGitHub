@@ -12,7 +12,7 @@
     <% if (session.getAttribute("currentSessionUser") != null) {
         response.sendRedirect("Index.jsp");
     } %>
-    <link rel="stylesheet" type="text/css" href="/src/css/LogIn2.css">
+    <link rel="stylesheet" type="text/css" href="src/css/register.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&subset=latin-ext" rel="stylesheet">
     <script type="text/javascript" src="src/js/SelectCoutry.js"></script>
     <script src="src/js/jquery-1.11.1.min.js"></script>

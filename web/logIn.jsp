@@ -12,10 +12,8 @@
     <% if (session.getAttribute("currentSessionUser") != null) {
         response.sendRedirect("Index.jsp");
     } %>
-    <link rel="stylesheet" type="text/css" href="/src/css/LogIn2.css">
-    <link href="${pageContext.request.contextPath}/src/css/fontello.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/logIn.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&subset=latin-ext" rel="stylesheet">
-    <script type="text/javascript" src="/src/js/Login.js"></script>
 
 </head>
 <body>
@@ -28,16 +26,8 @@
             <input type="password" name="haslo" placeholder="hasło" onfocus="this.placeholder=' ' "
                    onblur="this.placeholder='hasło' ">
             <input type="submit" name value="Logowanie" formaction="/login">
-            <input type="submit" value="Rejestracja" formaction="Register.jsp">
+            <input type="submit" value="Rejestracja" formaction="register.jsp">
         </form>
-
-        <% String costam = (String) request.getAttribute("error");
-            if (costam == null) {%>
-        <div style="color: red; font-family: 'Lato', sans-serif;font-size: small;">&#160;</div>
-        <%
-        } else { %>
-        <div style="color: red; font-family: 'Lato', sans-serif; font-size: small"><%=costam%></div>
-        <% } %>
     </div>
 </div>
 </body>
