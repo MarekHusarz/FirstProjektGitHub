@@ -2,35 +2,27 @@ package classes;
 
 import java.sql.*;
 
-public class UserDAO {
-    static Connection currentCon = null;
-    static ResultSet rs = null;
-    static PreparedStatement pstmt = null;
+public class LoginDAO {
 
 
     public static UserBean login(UserBean bean) {
 
-        //preparing some objects for connection
-        Statement stmt = null;
+        Connection currentCon = null;
+        ResultSet rs = null;
+        PreparedStatement pstmt = null;
 
         String username = bean.getUsername();
         String password = bean.getPassword();
-
-        String searchQuery =
-                "select * from uzytkownicy where user=? AND pass=?";
-
-
-        // "System.out.println" prints in the console; Normally used to trace the process
-        System.out.println("Your user name is " + username);
-        System.out.println("Your password is " + password);
-        System.out.println("Query: " + searchQuery);
-
         try {
-            //connect to DB
+            String query =
+                    "select * from pagelogin where user=? AND pass=?";
             currentCon = ConnectionManager.getConnection();
-            PreparedStatement pstmt = currentCon.prepareStatement(searchQuery);
+            pstmt = currentCon.prepareStatement(query);
             pstmt.setString(1, username);
             pstmt.setString(2, password);
+
+            System.out.println("Query: " + query);
+
             rs = pstmt.executeQuery();
             boolean more = rs.next();
 
@@ -38,14 +30,13 @@ public class UserDAO {
             if (!more) {
                 System.out.println("Sorry, you are not a registered user! Please sign up first");
                 bean.setValid(false);
-            }
-           else if (more) {
+            } else if (more) {
                 bean.setValid(true);
+                System.out.println("User is Log in");
             }
         } catch (Exception ex) {
             System.out.println("Log In failed: An Exception has occurred! " + ex);
-        }
-        finally {
+        } finally {
             if (rs != null) {
                 try {
                     rs.close();
@@ -54,12 +45,12 @@ public class UserDAO {
                 rs = null;
             }
 
-            if (stmt != null) {
+            if (pstmt != null) {
                 try {
-                    stmt.close();
+                    pstmt.close();
                 } catch (Exception e) {
                 }
-                stmt = null;
+                pstmt = null;
             }
 
             if (currentCon != null) {

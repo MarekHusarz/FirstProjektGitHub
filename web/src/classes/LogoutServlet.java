@@ -14,8 +14,6 @@ import javax.servlet.http.HttpSession;
  */
 public class LogoutServlet extends HttpServlet {
 
-    RequestDispatcher requestDispatcher;
-
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, java.io.IOException {
 
@@ -23,7 +21,6 @@ public class LogoutServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.invalidate();
             response.sendRedirect("logIn.jsp"); //logged-in page
-
             System.out.println("You are successfully logged out!");
         } catch (Throwable theException) {
             System.out.println(theException);

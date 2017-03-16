@@ -4,12 +4,9 @@ import java.sql.*;
 
 public class RegisterDAO {
 
-
     public static UserBean login(UserBean bean) throws SQLException {
-
-        //preparing some objects for connectiondds
         Connection currentCon = null;
-        Statement statement = null;
+        PreparedStatement pstmt = null;
         int number = 0;
 
         String username = bean.getUsername();
@@ -19,42 +16,42 @@ public class RegisterDAO {
         String country = bean.getCountry();
         String date = bean.getDate();
 
-
-        String query =
-                "INSERT INTO uzytkownicy (user, pass, email) VALUES ('" + username + "','" + password + "','" + emile + "')";
-
-        // "System.out.println" prints in the console; Normally used to trace the process
-        System.out.println("Your user name is " + username);
-        System.out.println("Your password is " + password);
-        System.out.println("Query: " + query);
-
         try {
+            String query =
+                    "INSERT INTO pageusers (username, password, emile, phone, country, date) VALUES"
+                            + "(?, ?, ?, ?, ?, ?)";
             currentCon = ConnectionManager.getConnection();
-            statement = currentCon.createStatement();
-            System.out.println(query);
-            // execute insert SQL stetement
-            number = statement.executeUpdate(query);
-            System.out.println("Record is inserted into DBUSER table!");
+            pstmt = currentCon.prepareStatement(query);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, emile);
+            pstmt.setString(4, phone);
+            pstmt.setString(5, country);
+            pstmt.setString(5, date);
+            System.out.println("Query: " + query);
+
+            number = pstmt.executeUpdate();
+            System.out.println("Record is inserted into pageusers table!");
 
             if (number > 0) {
                 bean.setValid(true);
+
             } else {
                 bean.setValid(false);
             }
 
         } catch (SQLException e) {
-
             System.out.println(e.getMessage());
         } finally {
             if (number != 0) {
                 number = 0;
             }
-            if (statement != null) {
+            if (pstmt != null) {
                 try {
-                    statement.close();
+                    pstmt.close();
                 } catch (Exception e) {
                 }
-                statement = null;
+                pstmt = null;
             }
 
             if (currentCon != null) {
@@ -62,7 +59,6 @@ public class RegisterDAO {
                     currentCon.close();
                 } catch (Exception e) {
                 }
-
                 currentCon = null;
             }
         }

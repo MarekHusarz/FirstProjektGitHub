@@ -19,11 +19,9 @@ public class RegisterServlet extends HttpServlet {
 
             user = RegisterDAO.login(user);
             if (user.isValid()) {
-                HttpSession session = request.getSession(true);
-                session.setAttribute("currentSessionUser", user);
                 response.sendRedirect("logIn.jsp"); //logged-in page
             } else
-                System.out.println("user nie jest valid");
+                System.out.println("registration not valid");
         } catch (Throwable theException) {
             System.out.println(theException);
         }

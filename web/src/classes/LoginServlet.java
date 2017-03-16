@@ -21,11 +21,10 @@ public class LoginServlet extends HttpServlet {
             UserBean user = new UserBean();
             user.setUsername(request.getParameter("login"));
             user.setPassword(request.getParameter("haslo"));
-
-            user = UserDAO.login(user);
+            user = LoginDAO.login(user);
 
             if (user.isValid()) {
-
+                System.out.println("is valid");
                 HttpSession session = request.getSession(true);
                 session.setAttribute("currentSessionUser", user);
                 response.sendRedirect("index.jsp"); //logged-in page
