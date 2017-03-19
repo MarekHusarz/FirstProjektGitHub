@@ -13,23 +13,31 @@
         response.sendRedirect("Index.jsp");
     } %>
     <link rel="stylesheet" type="text/css" href="src/css/register.css">
+    <link rel="stylesheet" type="text/css" href="src/css/popover_registration.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&subset=latin-ext" rel="stylesheet">
-    <script type="text/javascript" src="src/js/SelectCoutry.js"></script>
     <script src="src/js/jquery-1.11.1.min.js"></script>
-    <script src="src/js/dobPicker.js"></script>
-
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="src/js/SelectCoutry.js"></script>
+    <script type="text/javascript" src="src/js/login_popover.js"></script>
+    <script type="text/javascript" src="src/js/angular_validation.js"></script>
+    <script type="text/javascript" src="src/js/dobPicker.js"></script>
 
 </head>
 <body>
 
 
 <div id="container">
-    <div id="login">
+    <div id="loginform" data-ng-app="myApp" data-ng-controller="myCtrl">
         <form action="/register" method="post">
-            <input id="username" type="text" oninput="LoginValid()" name="  username" placeholder="Login"
-                   onfocus="this.placeholder=' '" onblur="this.placeholder='Login' ">
-            <input type="password" name="haslo" placeholder="Hasło" onfocus="this.placeholder=' ' "
-                   onblur="this.placeholder='Hasło' ">
+            <span id="ousername_popover">
+                <input  id="username" type="text" data-ng-model="ngUser" oninput="LoginValid()"
+                       name="username" placeholder="Login" onfocus="this.placeholder=' '" onblur="this.placeholder='Login' ">
+            </span>
+            <span id="password_popover">
+                <input id="password" type="password" name="haslo" placeholder="Hasło" onfocus="this.placeholder=' ' "
+                       onblur="this.placeholder='Hasło' ">
+            </span>
             <input type="password" name="haslo1" placeholder="Powtórz Hasło" onfocus="this.placeholder=' ' "
                    onblur="this.placeholder='Powtórz Hasło' ">
             <input type="text" name="emile" placeholder="E-mail" onfocus="this.placeholder=' ' "

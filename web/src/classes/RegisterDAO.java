@@ -27,7 +27,7 @@ public class RegisterDAO {
             pstmt.setString(3, emile);
             pstmt.setString(4, phone);
             pstmt.setString(5, country);
-            pstmt.setString(5, date);
+            pstmt.setString(6, date);
             System.out.println("Query: " + query);
 
             number = pstmt.executeUpdate();

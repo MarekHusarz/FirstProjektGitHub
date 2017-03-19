@@ -15,7 +15,7 @@ public class LoginDAO {
         String password = bean.getPassword();
         try {
             String query =
-                    "select * from pagelogin where user=? AND pass=?";
+                    "select * from pageusers where username=? AND password=?";
             currentCon = ConnectionManager.getConnection();
             pstmt = currentCon.prepareStatement(query);
             pstmt.setString(1, username);
