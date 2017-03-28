@@ -4,6 +4,28 @@ body {
     color: #0a2980;
 }
 
+#popOverUserName {
+    display: none;
+}
+
+.invalidy:before {
+    content: "\2718";
+    color: red
+}
+
+.validy:before {
+    content: "\2713";
+    color: green
+}
+
+.invalidy {
+    padding: 5px;
+}
+
+.validy {
+    padding: 5px;
+}
+
 #container {
     width: 100%;
     min-height: 100%
@@ -21,6 +43,7 @@ body {
     box-shadow: 3px 3px 30px 5px rgb(10, 41, 128);
     border-radius: 30px;
 }
+
 #formdiv {
     width: 300px;
     color: #0a2980;
@@ -31,6 +54,7 @@ body {
     box-sizing: border-box;
     margin-top: 10px;
 }
+
 select {
     width: 300px;
     background-color: #efefef;

@@ -19,6 +19,9 @@ public class UserBean {
         this.date = date;
 
     }
+    public UserBean(String username) {
+        this.username = username;
+    }
 
     public UserBean() {
     }
